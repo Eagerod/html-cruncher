@@ -1,0 +1,23 @@
+{
+	"name": "html-cruncher",
+	"description": "HTML parser",
+	"version": "0.0.1",
+	"private": true,
+	"keywords":[
+		"html",
+		"parser"
+	],
+	"dependencies": {
+	},
+	"devDependencies":{
+		"jsdoc":"3.3.0"
+	},
+	"author":{
+		"name":"Aleem Haji",
+		"author":"hajial@gmail.com"
+	},
+	"scripts":{
+		"test":"nodeunit tests/test.js",
+		"docs":"jsdoc ./lib/html-element.js"
+	}
+}
