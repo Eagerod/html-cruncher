@@ -9,7 +9,7 @@
 	"dependencies": {
 	},
 	"devDependencies":{
-		"jsdoc":"3.3.0"
+		"jsdoc":"<=3.3.0"
 	},
 	"author":{
 		"name":"Aleem Haji",
@@ -17,6 +17,6 @@
 	},
 	"scripts":{
 		"test":"nodeunit tests/test.js",
-		"docs":"jsdoc ./lib/html-element.js"
+		"docs":"./node_modules/.bin/jsdoc --recurse ./lib"
 	}
 }
