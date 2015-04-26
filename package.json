@@ -6,6 +6,7 @@
 		"html",
 		"parser"
 	],
+	"license":"MIT",
 	"dependencies": {
 	},
 	"devDependencies":{
