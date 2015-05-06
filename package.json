@@ -1,12 +1,16 @@
 {
 	"name": "html-cruncher",
 	"description": "HTML parser",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"keywords":[
 		"html",
 		"parser"
 	],
 	"license":"MIT",
+	"repository": { 
+		"type":"git",
+		"url":"https://github.com/Eagerod/html-cruncher.git"
+	},
 	"dependencies": {
 	},
 	"devDependencies":{
