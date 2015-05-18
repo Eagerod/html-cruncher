@@ -8,7 +8,7 @@ in a page's DOM.
 
 Start out by installing html-cruncher using npm:
 
-    npm intall html-cruncher
+    npm install html-cruncher
 
 Set up your node project to use the html-cruncher:
 
