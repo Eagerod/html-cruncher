@@ -74,3 +74,24 @@ exports.testIEComment = function(test)
 	}]);
 	test.done();
 }
+
+exports.testCommentFollowingComment = function(test)
+{
+	test.expect(1);
+	var testDocument = "Here's some stuff <!-- that I totally didn't do --> I did last week <!-- and I kinda feel bad about it -->";
+	var parsed = HTMLElement.fromString(testDocument).children;
+	test.deepEqual(parsed, [{
+		dataType : HTMLElement.DataTypes.Text,
+		content : "Here's some stuff"
+	}, {
+		dataType : HTMLElement.DataTypes.Comment,
+		content : "that I totally didn't do"
+	}, {
+		dataType : HTMLElement.DataTypes.Text,
+		content : "I did last week"
+	}, {
+		dataType : HTMLElement.DataTypes.Comment,
+		content : "and I kinda feel bad about it"
+	}]);
+	test.done();
+}
