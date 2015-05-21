@@ -56,3 +56,21 @@ exports.testMultiLineComment = function(test)
 	}]);
 	test.done();
 }
+
+exports.testIEComment = function(test)
+{
+	test.expect(1);
+	var testDocument = "Here's some stuff <!--[if IE]> that I totally didn't do <![endif]--> I did last week";
+	var parsed = HTMLElement.fromString(testDocument).children;
+	test.deepEqual(parsed, [{
+		dataType : HTMLElement.DataTypes.Text,
+		content : "Here's some stuff"
+	}, {
+		dataType : HTMLElement.DataTypes.Comment,
+		content : "[if IE]> that I totally didn't do <![endif]"
+	}, {
+		dataType : HTMLElement.DataTypes.Text,
+		content : "I did last week"
+	}]);
+	test.done();
+}
