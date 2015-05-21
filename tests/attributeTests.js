@@ -94,3 +94,20 @@ exports.testAttributesWithTerminator = function(test)
 	}]);
 	test.done();
 }
+
+exports.testAttributeJavaScript = function(test)
+{
+	test.expect(1);
+	var testDocument = "<input\ntype=\"button\"\nvalue=\"Do Something\"\nonclick=\"console.log(new Object())\">"
+	var parsed = HTMLElement.fromString(testDocument).children;
+	test.deepEqual(parsed, [{
+		dataType : HTMLElement.DataTypes.Tag,
+		content : "input",
+		attributes : {
+			type : "button",
+			value : "Do Something",
+			onclick : "console.log(new Object())"
+		}
+	}]);
+	test.done();
+}
