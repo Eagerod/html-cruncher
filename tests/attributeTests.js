@@ -111,3 +111,22 @@ exports.testAttributeJavaScript = function(test)
 	}]);
 	test.done();
 }
+
+exports.testAttributeWithTagLikeContents = function(test)
+{
+	test.expect(1);
+	var testDocument = "<a href=\"/search?q=John Smith <john@smith.com>\">John Smith &lt;john@smith.com&gt;</a>"
+	var parsed = HTMLElement.fromString(testDocument).children;
+	test.deepEqual(parsed, [{
+		dataType : HTMLElement.DataTypes.Tag,
+		content : "a",
+		attributes : {
+			href : "/search?q=John Smith <john@smith.com>"
+		},
+		children : [{
+			dataType : HTMLElement.DataTypes.Text,
+			content : "John Smith &lt;john@smith.com&gt;"
+		}]
+	}]);
+	test.done();
+}
