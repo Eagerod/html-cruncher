@@ -2,26 +2,28 @@
 	"name": "html-cruncher",
 	"description": "HTML parser",
 	"version": "0.0.6",
-	"keywords":[
+	"keywords": [
 		"html",
 		"parser"
 	],
-	"license":"MIT",
+	"license": "MIT",
 	"repository": { 
-		"type":"git",
-		"url":"https://github.com/Eagerod/html-cruncher.git"
+		"type": "git",
+		"url": "https://github.com/Eagerod/html-cruncher.git"
 	},
 	"dependencies": {
 	},
-	"devDependencies":{
-		"jsdoc":"<=3.3.0"
+	"devDependencies": {
+		"jsdoc": "<=3.3.0",
+		"eslint": "0.24.0"
 	},
 	"author":{
-		"name":"Aleem Haji",
-		"author":"hajial@gmail.com"
+		"name": "Aleem Haji",
+		"author": "hajial@gmail.com"
 	},
-	"scripts":{
-		"test":"nodeunit tests/test.js",
-		"docs":"./node_modules/.bin/jsdoc --recurse ./lib"
+	"scripts": {
+		"test": "nodeunit tests/test.js",
+		"docs": "./node_modules/.bin/jsdoc --recurse ./lib",
+		"lint": "./node_modules/.bin/eslint ."
 	}
 }
