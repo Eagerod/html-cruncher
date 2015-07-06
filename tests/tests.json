@@ -1,0 +1,239 @@
+{
+    "parseTests": {
+        "basicTagTests": {
+            "testVerySimpleTag": [
+                "<h1>text goes here</h1>",
+                [{
+                    "dataType": "tag",
+                    "content": "h1",
+                    "children": [{
+                        "dataType": "text",
+                        "content": "text goes here"
+                    }]        
+                }]
+            ],
+            "testDoubleTag": [
+                "<br>text<br>",
+                [{
+                    "dataType": "tag",
+                    "content": "br"
+                }, {
+                    "dataType": "text",
+                    "content": "text"
+                }, {
+                    "dataType": "tag",
+                    "content": "br"
+                }]
+            ],
+            "testBasicStructure": [
+                "<html><title>Hello World!</title><body>Here's some HTML</body></html>",
+                [{
+                    "dataType": "tag",
+                    "content": "html",
+                    "children": [{
+                        "dataType": "tag",
+                        "content": "title",
+                        "children": [{
+                            "dataType": "text",
+                            "content": "Hello World!"
+                        }]
+                    }, {
+                        "dataType": "tag",
+                        "content": "body",
+                        "children": [{
+                            "dataType": "text",
+                            "content": "Here's some HTML"
+                        }]
+                    }]
+                }]
+            ],
+            "testOnlyText":[
+                "Here's some text.",
+                [{
+                    "dataType": "text",
+                    "content": "Here's some text."
+                }]
+            ],
+            "testImmediateSiblings": [
+                "Some Text\n<p>\nSome more text",
+                [{
+                    "dataType": "text",
+                    "content": "Some Text"
+                }, {
+                    "dataType": "tag",
+                    "content": "p"
+                }, {
+                    "dataType": "text",
+                    "content": "Some more text"
+                }]
+            ]
+        },
+        "attributeTests": {
+            "testWithAttributes": [
+                "<head><script language=\"javascript\">for ( var i = 0; i < 239204; ++i ) { console.log(\"<div>Textibles!</div>\") };</script></head>",
+                [{
+                    "dataType": "tag",
+                    "content": "head",
+                    "children": [{
+                        "dataType": "tag",
+                        "content": "script",
+                        "attributes": {
+                            "language": "javascript"
+                        },
+                        "children": [{
+                            "dataType": "text",
+                            "content": "for ( var i = 0; i < 239204; ++i ) { console.log(\"<div>Textibles!</div>\") };"
+                        }]
+                    }]
+                }]
+            ],
+            "testAttributesWithoutQuotes": [
+                "<font size = 23>some text</font>",
+                [{
+                    "dataType": "tag",
+                    "content": "font",
+                    "attributes": {
+                        "size": "23"
+                    },
+                    "children": [{
+                        "dataType": "text",
+                        "content": "some text"
+                    }]
+                }]
+            ],
+            "testAttributesWithoutValue": [
+                "<option value='foo' id=\"bar\" selected>",
+                [{
+                    "dataType": "tag",
+                    "content": "option",
+                    "attributes": {
+                        "value": "foo",
+                        "id": "bar",
+                        "selected": null
+                    }
+                }]
+            ],
+            "testExtraSpacesAllOver": [
+                "<\n font    \n size='23' \n>  some oddly    spaced text  <\n /  \nfont   \n>",
+                [{
+                    "dataType": "tag",
+                    "content": "font",
+                    "attributes": {
+                        "size": "23"
+                    },
+                    "children": [{
+                        "dataType": "text",
+                        "content": "some oddly    spaced text"
+                    }]
+                }]
+            ],
+            "testAttributesWithTerminator": [
+                "<aTag attribute=\"blah blah blah\" />",
+                [{
+                    "dataType": "tag",
+                    "content": "aTag",
+                    "attributes": {
+                        "attribute": "blah blah blah"
+                    }
+                }]
+            ],
+            "testAttributeJavaScript": [
+                "<input\ntype=\"button\"\nvalue=\"Do Something\"\nonclick=\"console.log(new Object())\">",
+                 [{
+                    "dataType": "tag",
+                    "content": "input",
+                    "attributes": {
+                        "type": "button",
+                        "value": "Do Something",
+                        "onclick": "console.log(new Object())"
+                    }
+                }]
+            ],
+            "testAttributeWithTagLikeContents": [
+                "<a href=\"/search?q=John Smith <john@smith.com>\">John Smith &lt;john@smith.com&gt;</a>",
+                [{
+                    "dataType": "tag",
+                    "content": "a",
+                    "attributes": {
+                        "href": "/search?q=John Smith <john@smith.com>"
+                    },
+                    "children": [{
+                        "dataType": "text",
+                        "content": "John Smith &lt;john@smith.com&gt;"
+                    }]
+                }]
+            ]
+        },
+        "specialCaseTests": {
+            "testStyle": [
+                "<style type=\"text/css\">\n body > p\n   { font-weight: bold; }</style>",
+                [{
+                    "dataType" : "tag",
+                    "content" : "style",
+                    "attributes" : {
+                        "type" : "text/css"
+                    },
+                    "children" : [{
+                        "dataType" : "text",
+                        "content" : "body > p\n   { font-weight: bold; }"
+                    }]
+                }]
+            ],
+            "testCommentInText": [
+                "Here's some stuff <!-- that I totally didn't do --> I did last week",
+                [{
+                    "dataType" : "text",
+                    "content" : "Here's some stuff"
+                }, {
+                    "dataType" : "comment",
+                    "content" : "that I totally didn't do"
+                }, {
+                    "dataType" : "text",
+                    "content" : "I did last week"
+                }]
+            ],
+            "testMultiLineComment": [
+                "Here's some stuff <!-- that I\ntotally\ndidn't do --> I did last week",
+                [{
+                    "dataType" : "text",
+                    "content" : "Here's some stuff"
+                }, {
+                    "dataType" : "comment",
+                    "content" : "that I\ntotally\ndidn't do"
+                }, {
+                    "dataType" : "text",
+                    "content" : "I did last week"
+                }]
+            ],
+            "testIEComment": [
+                "Here's some stuff <!--[if IE]> that I totally didn't do <![endif]--> I did last week",
+                [{
+                    "dataType" : "text",
+                    "content" : "Here's some stuff"
+                }, {
+                    "dataType" : "comment",
+                    "content" : "[if IE]> that I totally didn't do <![endif]"
+                }, {
+                    "dataType" : "text",
+                    "content" : "I did last week"
+                }]
+            ],
+            "testCommentFollowingComment": [
+                "Here's some stuff <!-- that I totally didn't do --> I did last week <!-- and I kinda feel bad about it -->",
+                [{
+                    "dataType" : "text",
+                    "content" : "Here's some stuff"
+                }, {
+                    "dataType" : "comment",
+                    "content" : "that I totally didn't do"
+                }, {
+                    "dataType" : "text",
+                    "content" : "I did last week"
+                }, {
+                    "dataType" : "comment",
+                    "content" : "and I kinda feel bad about it"
+                }]
+            ]
+        }
+    }
+}

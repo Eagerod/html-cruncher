@@ -1,0 +1,102 @@
+{
+    "bigTests": {
+        "testNestedLikeObjects": [
+            "./tests/nav.html",
+            [{
+                "dataType" : "tag",
+                "content" : "div",
+                "attributes" : { "id" : "header" },
+                "children" : [{
+                    "dataType" : "tag",
+                    "content" : "br",
+                    "attributes" : { "class" : "break" }
+                }, {
+                    "dataType" : "tag",
+                    "content" : "div",
+                    "attributes" : { "id" : "leftheader" },
+                    "children" : [{
+                        "dataType" : "tag",
+                        "content" : "a",
+                        "attributes" : { "href" : "/" },
+                        "children" : [{
+                            "dataType" : "text",
+                            "content" : "Home"
+                        }]
+                    }]
+                }, {
+                    "dataType" : "tag",
+                    "content" : "div",
+                    "attributes" : { "id" : "rightheader" },
+                    "children" : [{
+                        "dataType" : "tag",
+                        "content" : "div",
+                        "attributes" : { "class" : "nav raised" },
+                        "children" : [{
+                            "dataType" : "tag",
+                            "content" : "ul",
+                            "children" : [{
+                                "dataType" : "tag",
+                                "content" : "li",
+                                "attributes" : { "class" : "highlight" },
+                                "children" : [{
+                                    "dataType" : "tag",
+                                    "content" : "a",
+                                    "attributes" : { "id" : "nav-page1", "href" : "/page1" },
+                                    "children" : [{
+                                        "dataType" : "text",
+                                        "content" : "Page 1"
+                                    }]
+                                }]
+                            }, {
+                                "dataType" : "tag",
+                                "content" : "li",
+                                "children" : [{
+                                    "dataType" : "tag",
+                                    "content" : "a",
+                                    "attributes" : { "id" : "nav-page2", "href" : "/page2" },
+                                    "children" : [{
+                                        "dataType" : "text",
+                                        "content" : "Page 2"
+                                    }]
+                                }]
+                            }, {
+                                "dataType" : "tag",
+                                "content" : "li",
+                                "children" : [{
+                                    "dataType" : "tag",
+                                    "content" : "a",
+                                    "attributes" : { "id" : "nav-page3", "href" : "/page3" },
+                                    "children" : [{
+                                        "dataType" : "text",
+                                        "content" : "Page 3"
+                                    }]
+                                }]
+                            }]
+                        }]
+                    }, {
+                        "dataType" : "tag",
+                        "content" : "div",
+                        "attributes" : { "class" : "nav fancy" },
+                        "children" : [{
+                            "dataType" : "tag",
+                            "content" : "ul",
+                            "children" : [{
+                                "dataType" : "tag",
+                                "content" : "li",
+                                "children" : [{
+                                    "dataType" : "tag",
+                                    "content" : "a",
+                                    "attributes" : { "id" : "nav-contact", "href" : "/contact" },
+                                    "children" : [{
+                                        "dataType" : "text",
+                                        "content" : "Contact us"
+                                    }]
+                                }]
+                            }]
+                        }]
+                    }]
+                }]
+            }]
+        ]
+    }
+}
