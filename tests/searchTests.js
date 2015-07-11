@@ -8,10 +8,10 @@ exports.searchForId = function(test) {
     var document = HTMLElement.fromString(testDocument);
     var element = document.getElementById("header");
     test.equal(element.attributes.id, "header");
-    var element = document.getElementById("notheader");
+    element = document.getElementById("notheader");
     test.equal(element, null);
     test.done();
-}
+};
 
 exports.searchForClass = function(test) {
     test.expect(3);
@@ -21,7 +21,7 @@ exports.searchForClass = function(test) {
     test.equal(document.getElementsByClassName("break").length, 1);
     test.equal(document.getElementsByClassName("header").length, 0);
     test.done();
-}
+};
 
 exports.searchForTags = function(test) {
     test.expect(3);
@@ -31,4 +31,4 @@ exports.searchForTags = function(test) {
     test.equal(document.getElementsByTagName("br").length, 1);
     test.equal(document.getElementsByTagName("script").length, 0);
     test.done();
-}
+};
