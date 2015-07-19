@@ -6,6 +6,17 @@ var HTMLElement = require("..");
 var testJson = require("./tests.json");
 var bigTestJson = require("./bigTests.json");
 
+function assertAllElementsAreHTMLElement(test, element) {
+    if ( !(element instanceof HTMLElement) ) {
+        console.log(element);
+        return test.fail("All elements and children not HTMLElement");
+    }
+    for ( var i in element.children ) {
+        var e = element.children[i];
+        assertAllElementsAreHTMLElement(test, e);
+    }
+}
+
 function recurseTestItems(base, name, items, isFile) {
     if ( items instanceof Array ) {
         var input = items[0];
@@ -13,10 +24,11 @@ function recurseTestItems(base, name, items, isFile) {
         if ( isFile ) {
             input = fs.readFileSync(input).toString();
         }
-        var element = HTMLElement.fromString(input).children;
+        var element = HTMLElement.fromString(input);
         base[name] = function(test) {
             test.expect(1);
-            test.deepEqual(expected, element);
+            assertAllElementsAreHTMLElement(test, element);
+            test.deepEqual(expected, element.children);
             test.done();
         };
     }
