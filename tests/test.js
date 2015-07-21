@@ -8,7 +8,6 @@ var bigTestJson = require("./bigTests.json");
 
 function assertAllElementsAreHTMLElement(test, element) {
     if ( !(element instanceof HTMLElement) ) {
-        console.log(element);
         return test.fail("All elements and children not HTMLElement");
     }
     for ( var i in element.children ) {
@@ -48,3 +47,4 @@ recurseTestItems(exports, null, testJson, false);
 recurseTestItems(exports, null, bigTestJson, true);
 
 exports.searchTests = require("./searchTests");
+exports.stringTests = require("./stringTests");
