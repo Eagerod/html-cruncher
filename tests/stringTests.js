@@ -17,3 +17,19 @@ exports.testSomeStructure = function(test) {
     test.equals(element.toString(), expected);
     test.done();
 }
+
+exports.testComments = function(test) {
+    test.expect(1)
+    var element = HTMLElement.fromString("<html><!--<title>Hello World!</title>--><body>Here's some HTML</body></html>")
+    var expected = "<html>\n    <!--<title>Hello World!</title>-->\n    <body>\n        Here's some HTML\n    </body>\n</html>"
+    test.equals(element.toString(), expected);
+    test.done();
+}
+
+exports.testAttributes = function(test) {
+    test.expect(1)
+    var element = HTMLElement.fromString("<div class id=\"myDiv\" style=\"display:none\"></div>")
+    var expected = "<div class id=\"myDiv\" style=\"display:none\">\n</div>";
+    test.equals(element.toString(), expected);
+    test.done();
+}
