@@ -48,3 +48,4 @@ recurseTestItems(exports, null, bigTestJson, true);
 
 exports.searchTests = require("./searchTests");
 exports.stringTests = require("./stringTests");
+exports.xpathTests = require("./xpath");
