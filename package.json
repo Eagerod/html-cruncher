@@ -7,19 +7,18 @@
         "parser"
     ],
     "license": "MIT",
-    "repository": { 
+    "repository": {
         "type": "git",
         "url": "https://github.com/Eagerod/html-cruncher.git"
     },
-    "dependencies": {
-    },
+    "dependencies": {},
     "devDependencies": {
         "jsdoc": "3.3.1",
         "eslint": "0.24.1",
         "nodeunit": "0.9.1",
         "istanbul": "0.3.17"
     },
-    "author":{
+    "author": {
         "name": "Aleem Haji",
         "author": "hajial@gmail.com"
     },
