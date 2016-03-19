@@ -7,7 +7,7 @@ exports.searchForId = function(test) {
     var testDocument = require("fs").readFileSync("./tests/nav.html").toString();
     var document = HTMLElement.fromString(testDocument);
     var element = document.getElementById("header");
-    test.equal(element.attributes.id, "header");
+    test.equal(element.attributes.id.content, "header");
     element = document.getElementById("notheader");
     test.equal(element, null);
     test.done();
