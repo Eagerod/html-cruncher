@@ -1,8 +1,7 @@
 # html-cruncher
 
 html-cruncher is a light-weight, dependency-free package for parsing HTML documents. 
-It was born out of the necessity to have an easy interface for finding certain elements
-in a page's DOM.
+It was born out of the necessity to have an easy interface for finding certain elements in a page's DOM.
 
 ## Usage
 
@@ -30,3 +29,13 @@ that you'd typically use in browser-side JavaScript.
 - `getElementsByClassName`
 - `getElementsByTagName`
 
+There's also a small subset of XPath available through the `xpath` method on `HTMLElement`. 
+You can select elements in a DOM by providing some simple xpath commands:
+
+- Element selection, direct child and full DOM.
+- Predicates
+    - Select node at index.
+    - Only select text nodes.
+    - Attribute equality.
+
+More will be added as needs arise, but for now, this is all that's needed all uses of this package I've been informed of. 
