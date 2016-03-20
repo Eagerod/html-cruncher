@@ -103,7 +103,10 @@
                                 "dataType": "tag",
                                 "content": "script",
                                 "attributes": {
-                                    "language": "javascript"
+                                    "language": {
+                                        "dataType": "attribute",
+                                        "content": "javascript"
+                                    }
                                 },
                                 "children": [
                                     {
@@ -123,7 +126,10 @@
                         "dataType": "tag",
                         "content": "font",
                         "attributes": {
-                            "size": "23"
+                            "size": {
+                                "dataType": "attribute",
+                                "content": "23"
+                            }
                         },
                         "children": [
                             {
@@ -141,9 +147,17 @@
                         "dataType": "tag",
                         "content": "option",
                         "attributes": {
-                            "value": "foo",
-                            "id": "bar",
-                            "selected": null
+                            "value": {
+                                "dataType": "attribute",
+                                "content": "foo"
+                            },
+                            "id": {
+                                "dataType": "attribute",
+                                "content": "bar"
+                            },
+                            "selected": {
+                                "dataType": "attribute"
+                            }
                         }
                     }
                 ]
@@ -155,7 +169,10 @@
                         "dataType": "tag",
                         "content": "font",
                         "attributes": {
-                            "size": "23"
+                            "size": {
+                                "dataType": "attribute",
+                                "content": "23"
+                            }
                         },
                         "children": [
                             {
@@ -173,7 +190,10 @@
                         "dataType": "tag",
                         "content": "aTag",
                         "attributes": {
-                            "attribute": "blah blah blah"
+                            "attribute": {
+                                "dataType": "attribute",
+                                "content": "blah blah blah"
+                            }
                         }
                     }
                 ]
@@ -185,9 +205,18 @@
                         "dataType": "tag",
                         "content": "input",
                         "attributes": {
-                            "type": "button",
-                            "value": "Do Something",
-                            "onclick": "console.log(new Object())"
+                            "type": {
+                                "dataType": "attribute",
+                                "content": "button"
+                            },
+                            "value": {
+                                "dataType": "attribute",
+                                "content": "Do Something"
+                            },
+                            "onclick": {
+                                "dataType": "attribute",
+                                "content": "console.log(new Object())"
+                            }
                         }
                     }
                 ]
@@ -199,7 +228,10 @@
                         "dataType": "tag",
                         "content": "a",
                         "attributes": {
-                            "href": "/search?q=John Smith <john@smith.com>"
+                            "href": {
+                                "dataType": "attribute",
+                                "content": "/search?q=John Smith <john@smith.com>"
+                            }
                         },
                         "children": [
                             {
@@ -219,7 +251,10 @@
                         "dataType": "tag",
                         "content": "style",
                         "attributes": {
-                            "type": "text/css"
+                            "type": {
+                                "dataType": "attribute",
+                                "content": "text/css"
+                            }
                         },
                         "children": [
                             {

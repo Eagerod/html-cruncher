@@ -35,7 +35,7 @@ module.exports.testRecursiveSearchText = function(test) {
     test.done();
 };
 
-module.exports.testRecursiveSearchAttribute = function(test) {
+module.exports.testRecursiveSearchAttributeFilter = function(test) {
     var html = fs.readFileSync("./tests/xpath.html");
     var document = HTMLElement.fromString(html.toString());
     test.deepEqual(document.xpath("//title[@lang]"), document.getElementsByTagName("title"));
@@ -46,6 +46,26 @@ module.exports.testRecursiveSearchAttributeValue = function(test) {
     var html = fs.readFileSync("./tests/xpath.html");
     var document = HTMLElement.fromString(html.toString());
     test.deepEqual(document.xpath("//title[@lang='en']"), document.getElementsByTagName("title"));
+    test.done();
+};
+
+module.exports.testRecursiveSearchAttributeNode = function(test) {
+    var html = fs.readFileSync("./tests/xpath.html");
+    var document = HTMLElement.fromString(html.toString());
+    var titles = document.getElementsByTagName("title");
+    var expected = titles.map(function(title) {
+        return title.attributes.lang;
+    });
+    test.deepEqual(document.xpath("//@lang"), expected);
+    test.done();
+};
+
+module.exports.testSearchAttributes = function(test) {
+    var html = fs.readFileSync("./tests/nav.html");
+    var document = HTMLElement.fromString(html.toString());
+    var elems = document.getElementsByTagName("a");
+    var attribs = [elems[1].attributes.id, elems[2].attributes.id, elems[3].attributes.id];
+    test.deepEqual(document.xpath("//div[@class='nav raised']/ul/li/a/@id"), attribs);
     test.done();
 };
 

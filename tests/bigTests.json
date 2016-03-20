@@ -7,28 +7,40 @@
                     "dataType": "tag",
                     "content": "div",
                     "attributes": {
-                        "id": "header"
+                        "id": {
+                            "dataType": "attribute",
+                            "content": "header"
+                        }
                     },
                     "children": [
                         {
                             "dataType": "tag",
                             "content": "br",
                             "attributes": {
-                                "class": "break"
+                                "class": {
+                                    "dataType": "attribute",
+                                    "content": "break"
+                                }
                             }
                         },
                         {
                             "dataType": "tag",
                             "content": "div",
                             "attributes": {
-                                "id": "leftheader"
+                                "id": {
+                                    "dataType": "attribute",
+                                    "content": "leftheader"
+                                }
                             },
                             "children": [
                                 {
                                     "dataType": "tag",
                                     "content": "a",
                                     "attributes": {
-                                        "href": "/"
+                                        "href": {
+                                            "dataType": "attribute",
+                                            "content": "/"
+                                        }
                                     },
                                     "children": [
                                         {
@@ -43,14 +55,20 @@
                             "dataType": "tag",
                             "content": "div",
                             "attributes": {
-                                "id": "rightheader"
+                                "id": {
+                                    "dataType": "attribute",
+                                    "content": "rightheader"
+                                }
                             },
                             "children": [
                                 {
                                     "dataType": "tag",
                                     "content": "div",
                                     "attributes": {
-                                        "class": "nav raised"
+                                        "class": {
+                                            "dataType": "attribute",
+                                            "content": "nav raised"
+                                        }
                                     },
                                     "children": [
                                         {
@@ -61,15 +79,24 @@
                                                     "dataType": "tag",
                                                     "content": "li",
                                                     "attributes": {
-                                                        "class": "highlight"
+                                                        "class": {
+                                                            "dataType": "attribute",
+                                                            "content": "highlight"
+                                                        }
                                                     },
                                                     "children": [
                                                         {
                                                             "dataType": "tag",
                                                             "content": "a",
                                                             "attributes": {
-                                                                "id": "nav-page1",
-                                                                "href": "/page1"
+                                                                "id": {
+                                                                    "dataType": "attribute",
+                                                                    "content": "nav-page1"
+                                                                },
+                                                                "href": {
+                                                                    "dataType": "attribute",
+                                                                    "content": "/page1"
+                                                                }
                                                             },
                                                             "children": [
                                                                 {
@@ -88,8 +115,14 @@
                                                             "dataType": "tag",
                                                             "content": "a",
                                                             "attributes": {
-                                                                "id": "nav-page2",
-                                                                "href": "/page2"
+                                                                "id": {
+                                                                    "dataType": "attribute",
+                                                                    "content": "nav-page2"
+                                                                },
+                                                                "href": {
+                                                                    "dataType": "attribute",
+                                                                    "content": "/page2"
+                                                                }
                                                             },
                                                             "children": [
                                                                 {
@@ -108,8 +141,14 @@
                                                             "dataType": "tag",
                                                             "content": "a",
                                                             "attributes": {
-                                                                "id": "nav-page3",
-                                                                "href": "/page3"
+                                                                "id": {
+                                                                    "dataType": "attribute",
+                                                                    "content": "nav-page3"
+                                                                },
+                                                                "href": {
+                                                                    "dataType": "attribute",
+                                                                    "content": "/page3"
+                                                                }
                                                             },
                                                             "children": [
                                                                 {
@@ -128,7 +167,10 @@
                                     "dataType": "tag",
                                     "content": "div",
                                     "attributes": {
-                                        "class": "nav fancy"
+                                        "class": {
+                                            "dataType": "attribute",
+                                            "content": "nav fancy"
+                                        }
                                     },
                                     "children": [
                                         {
@@ -143,8 +185,14 @@
                                                             "dataType": "tag",
                                                             "content": "a",
                                                             "attributes": {
-                                                                "id": "nav-contact",
-                                                                "href": "/contact"
+                                                                "id": {
+                                                                    "dataType": "attribute",
+                                                                    "content": "nav-contact"
+                                                                },
+                                                                "href": {
+                                                                    "dataType": "attribute",
+                                                                    "content": "/contact"
+                                                                }
                                                             },
                                                             "children": [
                                                                 {
