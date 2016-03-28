@@ -18,13 +18,13 @@ function assertAllElementsAreHTMLElement(test, element) {
 
 function recurseTestItems(base, name, items, isFile) {
     if ( items instanceof Array ) {
-        var input = items[0];
-        var expected = items[1];
-        if ( isFile ) {
-            input = fs.readFileSync(input).toString();
-        }
-        var element = HTMLElement.fromString(input);
         base[name] = function(test) {
+            var input = items[0];
+            var expected = items[1];
+            if ( isFile ) {
+                input = fs.readFileSync(input).toString();
+            }
+            var element = HTMLElement.fromString(input);
             test.expect(1);
             assertAllElementsAreHTMLElement(test, element);
             test.deepEqual(expected, element.children);
