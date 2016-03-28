@@ -241,6 +241,34 @@
                         ]
                     }
                 ]
+            ],
+            "testAttributeWithTagLikeContentsThatCloseExistingTags": [
+                "<div><a href=\"/search?q=</div><a>/results</a>\">CLICK ME!</a></div>",
+                [
+                    {
+                        "dataType": "tag",
+                        "content": "div",
+                        "children": 
+                        [
+                            {
+                                "dataType": "tag",
+                                "content": "a",
+                                "attributes": {
+                                    "href": {
+                                        "dataType": "attribute",
+                                        "content": "/search?q=</div><a>/results</a>"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "dataType": "text",
+                                        "content": "CLICK ME!"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             ]
         },
         "specialCaseTests": {
