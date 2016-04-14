@@ -140,6 +140,27 @@
                     }
                 ]
             ],
+            "testAttributesWithEqualSignInValueNoQuotes": [
+                "<a href=/page?query=thing>some text</a>",
+                [
+                    {
+                        "dataType": "tag",
+                        "content": "a",
+                        "attributes": {
+                            "href": {
+                                "dataType": "attribute",
+                                "content": "/page?query=thing"
+                            }
+                        },
+                        "children": [
+                            {
+                                "dataType": "text",
+                                "content": "some text"
+                            }
+                        ]
+                    }
+                ]
+            ],
             "testAttributesWithoutValue": [
                 "<option value='foo' id=\"bar\" selected>",
                 [
