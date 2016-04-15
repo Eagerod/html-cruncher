@@ -180,6 +180,27 @@
                     }
                 ]
             ],
+            "testAttributesWithEndTagCharacterInValue": [
+                "<a href=\"/page?query=value>4\">some text</a>",
+                [
+                    {
+                        "dataType": "tag",
+                        "content": "a",
+                        "attributes": {
+                            "href": {
+                                "dataType": "attribute",
+                                "content": "/page?query=value>4"
+                            }
+                        },
+                        "children": [
+                            {
+                                "dataType": "text",
+                                "content": "some text"
+                            }
+                        ]
+                    }
+                ]
+            ],
             "testAttributesWithoutValue": [
                 "<option value='foo' id=\"bar\" selected>",
                 [
