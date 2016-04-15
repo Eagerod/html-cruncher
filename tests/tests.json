@@ -223,6 +223,28 @@
                     }
                 ]
             ],
+            "testAttributesWithoutValueErrantEquals": [
+                "<option value='foo' id=\"bar\" selected=>",
+                [
+                    {
+                        "dataType": "tag",
+                        "content": "option",
+                        "attributes": {
+                            "value": {
+                                "dataType": "attribute",
+                                "content": "foo"
+                            },
+                            "id": {
+                                "dataType": "attribute",
+                                "content": "bar"
+                            },
+                            "selected": {
+                                "dataType": "attribute"
+                            }
+                        }
+                    }
+                ]
+            ],
             "testExtraSpacesAllOver": [
                 "<\n font    \n size='23' \n>  some oddly    spaced text  <\n /  \nfont   \n>",
                 [
