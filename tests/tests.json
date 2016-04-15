@@ -140,6 +140,25 @@
                     }
                 ]
             ],
+            "testAttributesWithNonAlphanumeric": [
+                "<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'>",
+                [
+                    {
+                        "dataType": "tag",
+                        "content": "meta",
+                        "attributes": {
+                            "http-equiv": {
+                                "dataType": "attribute",
+                                "content": "Content-Type"
+                            },
+                            "content": {
+                                "dataType": "attribute",
+                                "content": "text/html; charset=iso-8859-1"
+                            }
+                        }
+                    }
+                ]
+            ],
             "testAttributesWithEqualSignInValueNoQuotes": [
                 "<a href=/page?query=thing>some text</a>",
                 [
