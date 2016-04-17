@@ -159,6 +159,31 @@
                     }
                 ]
             ],
+            "testAttributesWithBrokenQuoting": [
+                "<meta name=\"title\" content=\"\"Yo\" Dawg\">",
+                [
+                    {
+                        "dataType": "tag",
+                        "content": "meta",
+                        "attributes": {
+                            "name": {
+                                "dataType": "attribute",
+                                "content": "title"
+                            },
+                            "content": {
+                                "dataType": "attribute",
+                                "content": ""
+                            },
+                            "Yo\"": {
+                                "dataType": "attribute"
+                            },
+                            "Dawg\"": {
+                                "dataType": "attribute"
+                            }
+                        }
+                    }
+                ]
+            ],
             "testAttributesWithEqualSignInValueNoQuotes": [
                 "<a href=/page?query=thing>some text</a>",
                 [
