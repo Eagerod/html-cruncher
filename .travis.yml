@@ -1,13 +1,7 @@
-language: nodejs
-
-install:
-  - npm install
+language: node_js
 
 before_script:
   - npm run lint
-
-script: 
-  - npm test
 
 node_js:
   - "0.12"
