@@ -6,6 +6,9 @@ install:
 before_script:
   - npm run lint
 
+script: 
+  - npm test
+
 node_js:
   - "0.12"
   - "4.2"
