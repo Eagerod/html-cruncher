@@ -184,6 +184,57 @@
                     }
                 ]
             ],
+            "testAttributesWithExtremelyBrokenQuoting": [
+                "<meta name=\"og:title\" content=\"\"You're a\" Dawg\">\n<meta name=\"twitter:title\" content=\"\"You're a\" Dawg\">",
+                [
+                    {
+                        "dataType": "tag",
+                        "content": "meta",
+                        "attributes": {
+                            "name": {
+                                "dataType": "attribute",
+                                "content": "og:title"
+                            },
+                            "content": {
+                                "dataType": "attribute",
+                                "content": ""
+                            },
+                            "You're": {
+                                "dataType": "attribute"
+                            },
+                            "a\"": {
+                                "dataType": "attribute"
+                            },
+                            "Dawg\"": {
+                                "dataType": "attribute"
+                            }
+                        }
+                    },
+                    {
+                        "dataType": "tag",
+                        "content": "meta",
+                        "attributes": {
+                            "name": {
+                                "dataType": "attribute",
+                                "content": "twitter:title"
+                            },
+                            "content": {
+                                "dataType": "attribute",
+                                "content": ""
+                            },
+                            "You're": {
+                                "dataType": "attribute"
+                            },
+                            "a\"": {
+                                "dataType": "attribute"
+                            },
+                            "Dawg\"": {
+                                "dataType": "attribute"
+                            }
+                        }
+                    }
+                ]
+            ],
             "testAttributesWithEqualSignInValueNoQuotes": [
                 "<a href=/page?query=thing>some text</a>",
                 [
