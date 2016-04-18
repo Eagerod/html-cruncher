@@ -1,5 +1,7 @@
 # html-cruncher
 
+[![Build Status](https://travis-ci.org/Eagerod/html-cruncher.svg?branch=master)](https://travis-ci.org/Eagerod/html-cruncher)
+
 html-cruncher is a light-weight, dependency-free package for parsing HTML documents. 
 It was born out of the necessity to have an easy interface for finding certain elements in a page's DOM.
 
