@@ -520,6 +520,15 @@
                         "content": "and I kinda feel bad about it"
                     }
                 ]
+            ],
+            "testErrantLessThanInHTML": [
+                "Here's some love <3! :D",
+                [
+                    {
+                        "dataType": "text",
+                        "content": "Here's some love <3! :D"
+                    }
+                ]
             ]
         }
     }
