@@ -159,6 +159,31 @@
                     }
                 ]
             ],
+            "testAttributesWithMissingQuotesNewlines": [
+                "<a id=myid\nhref=\"/page?query=thing\">some text</a>",
+                [
+                    {
+                        "dataType": "tag",
+                        "content": "a",
+                        "attributes": {
+                            "id": {
+                                "dataType": "attribute",
+                                "content": "myid"
+                            },
+                            "href": {
+                                "dataType": "attribute",
+                                "content": "/page?query=thing"
+                            }
+                        },
+                        "children": [
+                            {
+                                "dataType": "text",
+                                "content": "some text"
+                            }
+                        ]
+                    }
+                ]
+            ],
             "testAttributesWithBrokenQuoting": [
                 "<meta name=\"title\" content=\"\"Yo\" Dawg\">",
                 [
