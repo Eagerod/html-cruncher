@@ -159,6 +159,31 @@
                     }
                 ]
             ],
+            "testAttributesWithMissingQuotesNewlines": [
+                "<a id=myid\nhref=\"/page?query=thing\">some text</a>",
+                [
+                    {
+                        "dataType": "tag",
+                        "content": "a",
+                        "attributes": {
+                            "id": {
+                                "dataType": "attribute",
+                                "content": "myid"
+                            },
+                            "href": {
+                                "dataType": "attribute",
+                                "content": "/page?query=thing"
+                            }
+                        },
+                        "children": [
+                            {
+                                "dataType": "text",
+                                "content": "some text"
+                            }
+                        ]
+                    }
+                ]
+            ],
             "testAttributesWithBrokenQuoting": [
                 "<meta name=\"title\" content=\"\"Yo\" Dawg\">",
                 [
@@ -175,6 +200,57 @@
                                 "content": ""
                             },
                             "Yo\"": {
+                                "dataType": "attribute"
+                            },
+                            "Dawg\"": {
+                                "dataType": "attribute"
+                            }
+                        }
+                    }
+                ]
+            ],
+            "testAttributesWithExtremelyBrokenQuoting": [
+                "<meta name=\"og:title\" content=\"\"You're a\" Dawg\">\n<meta name=\"twitter:title\" content=\"\"You're a\" Dawg\">",
+                [
+                    {
+                        "dataType": "tag",
+                        "content": "meta",
+                        "attributes": {
+                            "name": {
+                                "dataType": "attribute",
+                                "content": "og:title"
+                            },
+                            "content": {
+                                "dataType": "attribute",
+                                "content": ""
+                            },
+                            "You're": {
+                                "dataType": "attribute"
+                            },
+                            "a\"": {
+                                "dataType": "attribute"
+                            },
+                            "Dawg\"": {
+                                "dataType": "attribute"
+                            }
+                        }
+                    },
+                    {
+                        "dataType": "tag",
+                        "content": "meta",
+                        "attributes": {
+                            "name": {
+                                "dataType": "attribute",
+                                "content": "twitter:title"
+                            },
+                            "content": {
+                                "dataType": "attribute",
+                                "content": ""
+                            },
+                            "You're": {
+                                "dataType": "attribute"
+                            },
+                            "a\"": {
                                 "dataType": "attribute"
                             },
                             "Dawg\"": {
