@@ -520,6 +520,30 @@
                         "content": "and I kinda feel bad about it"
                     }
                 ]
+            ],
+            "testErrantLessThanInText": [
+                "Here's some love <3! :D",
+                [
+                    {
+                        "dataType": "text",
+                        "content": "Here's some love <3! :D"
+                    }
+                ]
+            ],
+            "testErrantLessThanInHTML": [
+                "<div>Here's some love <3! :D</div>",
+                [
+                    {
+                        "dataType": "tag",
+                        "content": "div",
+                        "children": [
+                            {
+                                "dataType": "text",
+                                "content": "Here's some love <3! :D"
+                            }
+                        ]
+                    }
+                ]
             ]
         }
     }
