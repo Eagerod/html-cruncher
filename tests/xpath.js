@@ -18,6 +18,13 @@ module.exports.testIndexing = function(test) {
     test.done();
 };
 
+module.exports.testIndexingOutOfBounds = function(test) {
+    var html = fs.readFileSync("./tests/xpath.html");
+    var document = HTMLElement.fromString(html.toString());
+    test.deepEqual(document.xpath("/bookstore/book[3]"), []);
+    test.done();
+};
+
 module.exports.testRecursiveSearch = function(test) {
     var html = fs.readFileSync("./tests/xpath.html");
     var document = HTMLElement.fromString(html.toString());
