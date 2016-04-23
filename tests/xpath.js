@@ -135,3 +135,12 @@ module.exports.testHtmlDocument = function(test) {
     test.deepEqual(text, ["Page 1", "Page 2", "Page 3", "Contact us"]);
     test.done();
 };
+
+module.exports.multipleRecursive = function(test) {
+    var html = fs.readFileSync("./tests/nav.html");
+    var document = HTMLElement.fromString(html.toString());
+    var listElements = document.getElementsByTagName("li");
+    test.deepEqual(document.xpath("//div//li"), listElements);
+    test.done();
+};
+
