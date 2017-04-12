@@ -33,3 +33,10 @@ exports.testAttributes = function(test) {
     test.equals(element.toString(), expected);
     test.done();
 };
+
+exports.testAttributeAlone = function(test) {
+    test.expect(1);
+    var element = HTMLElement.fromString("<div class id=\"myDiv\" style=\"display:none\"></div>");
+    test.equals(element.xpath("/div/@id").toString(), "myDiv");
+    test.done();
+};
