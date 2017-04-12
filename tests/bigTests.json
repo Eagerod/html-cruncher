@@ -170,6 +170,10 @@
                                         "class": {
                                             "dataType": "attribute",
                                             "content": "nav fancy"
+                                        },
+                                        "ng-show": {
+                                            "dataType": "attribute",
+                                            "content": "something > 1"
                                         }
                                     },
                                     "children": [

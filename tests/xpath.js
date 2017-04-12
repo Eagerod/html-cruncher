@@ -152,3 +152,10 @@ module.exports.hasDashesInTagName = function(test) {
     test.done();
 };
 
+module.exports.hasDashesInAttributeName = function(test) {
+    var html = fs.readFileSync("./tests/nav.html");
+    var document = HTMLElement.fromString(html.toString());
+    var listElements = document.getElementsByClassName("fancy");
+    test.deepEqual(document.xpath("//div[@ng-show='something > 1']"), listElements);
+    test.done();
+};
