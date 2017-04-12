@@ -208,6 +208,22 @@
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            "dataType": "tag",
+                            "content": "custom-footer",
+                            "children": [
+                                {
+                                    "dataType": "tag",
+                                    "content": "p",
+                                    "children": [
+                                        {
+                                            "dataType": "text",
+                                            "content": "Made with love in My Hometown"
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }
