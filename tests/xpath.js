@@ -144,3 +144,11 @@ module.exports.multipleRecursive = function(test) {
     test.done();
 };
 
+module.exports.hasDashesInTagName = function(test) {
+    var html = fs.readFileSync("./tests/nav.html");
+    var document = HTMLElement.fromString(html.toString());
+    var listElements = document.getElementsByTagName("custom-footer");
+    test.deepEqual(document.xpath("//custom-footer"), listElements);
+    test.done();
+};
+
