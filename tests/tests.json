@@ -544,7 +544,26 @@
                         ]
                     }
                 ]
-            ]
+            ],
+            "testUnterminatedTag": [
+                "<img src=http://somedomain.atld/a/path/to/some/resource attrtwo=123",
+                [
+                    {
+                        "dataType": "tag",
+                        "content": "img",
+                        "attributes": {
+                            "src": {
+                                "dataType": "attribute",
+                                "content": "http://somedomain.atld/a/path/to/some/resource"
+                            },
+                            "attrtwo": {
+                                "dataType": "attribute",
+                                "content": "123"
+                            }
+                        }
+                    }
+                ]
+             ]        
         }
     }
 }
